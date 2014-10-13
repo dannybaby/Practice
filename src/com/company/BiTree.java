@@ -38,7 +38,7 @@ public class BiTree<T> {
     }
     
     public void preOrderTraverse(){
-        Stack< BiTreeNode<T> > tmp = new Stack<>();
+        Stack< BiTreeNode<T> > tmp = new Stack< BiTreeNode<T> >();
         BiTreeNode<T> node = root;
         while (node != null || !tmp.isEmpty()){
             while (node != null) {
@@ -52,7 +52,7 @@ public class BiTree<T> {
     }
     
     public void inOrderTraverse(){
-        Stack< BiTreeNode<T> > tmp = new Stack<>();
+        Stack< BiTreeNode<T> > tmp = new Stack< BiTreeNode<T> >();
         BiTreeNode<T> node = root;
         while (node != null || !tmp.isEmpty()){
             while (node != null){
@@ -66,7 +66,7 @@ public class BiTree<T> {
     }
     
     public void postOrderTraverse(){
-        Stack< BiTreeNode<T> > tmp  = new Stack<>();
+        Stack< BiTreeNode<T> > tmp  = new Stack< BiTreeNode<T> >();
         BiTreeNode<T> node = root;
         tmp.push(node);
         BiTreeNode<T> pre = null;
