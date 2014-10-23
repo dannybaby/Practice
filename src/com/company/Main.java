@@ -1,5 +1,9 @@
 package com.company;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -16,8 +20,12 @@ public class Main {
         Linked_List_Cycle<String> res = new Linked_List_Cycle<String>();
         System.out.println(res.FindCycleStartPoint(testlist.head));
         System.out.println(res.CycleLength(testlist.head));*/
-        int mid = 1/2;
-        System.out.println(mid);
+        N_Queens test = new N_Queens();
+        List<String[]> res = test.solveNQueens2(100);
+        for (String[] re : res) {
+            System.out.println(Arrays.toString(re));
+        }
+
     }
 }
 
