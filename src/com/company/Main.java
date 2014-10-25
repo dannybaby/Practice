@@ -19,13 +19,15 @@ public class Main {
         p.next = testlist.head.next.next;
         Linked_List_Cycle<String> res = new Linked_List_Cycle<String>();
         System.out.println(res.FindCycleStartPoint(testlist.head));
-        System.out.println(res.CycleLength(testlist.head));*/
+        System.out.println(res.CycleLength(testlist.head));
         N_Queens test = new N_Queens();
         List<String[]> res = test.solveNQueens2(100);
         for (String[] re : res) {
-            System.out.println(Arrays.toString(re));
-        }
-
+            System.out.println(Arrays.toString(re));*/
+        
+        Unique_Paths test = new Unique_Paths();
+        System.out.println(test.uniquePaths(100, 3));
+        
     }
 }
 
