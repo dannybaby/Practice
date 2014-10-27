@@ -25,8 +25,9 @@ public class Main {
         for (String[] re : res) {
             System.out.println(Arrays.toString(re));*/
         
-        Unique_Paths test = new Unique_Paths();
-        System.out.println(test.uniquePaths(100, 3));
+        Permutations test = new Permutations();
+        int[] num = new int[]{0,1,2};
+        System.out.println(test.permute(num));
         
     }
 }
