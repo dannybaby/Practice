@@ -26,7 +26,7 @@ public class Main {
             System.out.println(Arrays.toString(re));*/
         
         Permutations test = new Permutations();
-        int[] num = new int[]{0,1,2};
+        int[] num = new int[]{0,1,2,3};
         System.out.println(test.permute(num));
         
     }

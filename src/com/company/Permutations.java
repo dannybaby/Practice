@@ -14,24 +14,42 @@ import java.util.List;
  * @author newstar
  */
 public class Permutations {
+    public List<List<Integer>> ans = new ArrayList<List<Integer>>();
+    public List<Integer> res = new ArrayList<Integer>();
     public List<List<Integer>> permute(int[] num) {
-        List<List<Integer>> res= new ArrayList<List<Integer>>();
-        int n = num.length;
-        int i,j;
-        if(n==0)
-            return null;
-        int k = 0;
-        while(k<2){
-        for(i = 0; i< n; i++)
-            for(j = i+1; j<n; j++){
-                int tmp = num[i];
-                num[i] = num[j];
-                num[j] = tmp;
-                List cur = Arrays.asList(num);
-                res.add(cur);
-            }
-        k++;
+        Integer[] numin = new Integer[num.length];
+        for(int i = 0; i<num.length; i++)
+            numin[i] = num[i];
+        if(numin.length == 0)
+            return ans;
+        if(numin.length == 1){
+            res.add(numin[0]);
+            ans.add(res);
+            return ans;
         }
-        return res;
-    }    
+        nonpermute(numin);
+        return this.ans;
+    }
+    
+    public void nonpermute(Integer[] num){
+        if(num.length == 0){
+            ans.add(new ArrayList<Integer>(res));
+            
+            System.out.println("ans"+ans);
+        }
+        else{
+        for(int i =0 ; i<num.length; i++){
+            res.add(num[i]);
+            System.out.println("Add" + res);
+            Integer[] newarray = new Integer[num.length - 1];
+            for(int k=0; k<i; k++)
+                newarray[k] = num[k];
+            for(int k = i+1; k<num.length; k++)
+                newarray[k-1] = num[k];
+            nonpermute(newarray);
+            res.remove(res.size()-1);
+            System.out.println(res);
+        }
+        }
+    }   
 }
