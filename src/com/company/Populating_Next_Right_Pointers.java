@@ -54,4 +54,46 @@ public class Populating_Next_Right_Pointers {
             cur = cur.left;
         }            
     }
+    public void connect3(TreeLinkNode root) {
+        TreeLinkNode p = root;
+        TreeLinkNode node = root;
+        TreeLinkNode cur = root;
+        while(p != null){
+            cur = p;
+            p = getchild(cur);
+            node = cur.next;
+            while(node != null){
+                TreeLinkNode tmp = getchild(node);
+                if(tmp != null){
+                    if(p == null){
+                        p = tmp;
+                    }
+                    else{
+                        getrchild(cur).next = tmp;
+                    }
+                    cur = node;
+                }
+                node = node.next;
+            }
+        }
+    }
+    
+    public TreeLinkNode getchild(TreeLinkNode root){
+        if(root.right == null && root.left == null)
+            return null;
+        else if(root.right == null && root.left !=null)
+            return root.left;
+        else if(root.left == null && root.right != null)
+            return root.right;
+        else{
+            root.left.next = root.right;
+            return root.left;
+        }
+    }
+    public TreeLinkNode getrchild(TreeLinkNode root){
+        if(root.right == null && root.left !=null)
+            return root.left;
+        else
+            return root.right;
+    }
 }

@@ -32,4 +32,15 @@ public class Remove_Duplicates_from_Sorted_Array {
         }
         return A.length-count;
     }    
+    public int removeDuplicates2(int[] A) {
+        if(A.length == 0 || A.length == 1 || A.length == 2)
+            return A.length;
+        int len = 2, itor = 2;
+        while(itor<A.length){
+            if(A[itor] != A[len-2])
+                A[len++] = A[itor];
+            itor++;
+        }
+        return len;
+    }
 }
