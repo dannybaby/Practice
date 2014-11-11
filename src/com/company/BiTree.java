@@ -12,6 +12,10 @@ package com.company;
  * e.g {a,b,c,#,#,e}
  */
 import java.util.Stack;
+import java.util.Queue;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 public class BiTree<T> {
     BiTreeNode<T> root;
     public BiTree(){}
@@ -85,4 +89,5 @@ public class BiTree<T> {
             }
         }
     }
+
 }
